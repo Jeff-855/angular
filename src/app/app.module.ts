@@ -10,13 +10,15 @@ import { TutorialsListComponent } from './components/tutorials-list/tutorials-li
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { TestComponent } from './components/test/test.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddTutorialComponent,
     TutorialDetailsComponent,
-    TutorialsListComponent
+    TutorialsListComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
