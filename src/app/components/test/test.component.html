@@ -1,0 +1,53 @@
+<p><font size="6">猜數字!</font></p>
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="digital1">Input first digital</label>
+        <input
+          type="text"
+          class="form-control"
+          id="digital1"
+          required
+          [(ngModel)]="test.digital1"
+          name="digital1"
+        />
+      </div>
+      <div class="form-group">
+        <label for="digital2">Input Second digital</label>
+        <input
+          type="text"
+          class="form-control"
+          id="digital2"
+          required
+          [(ngModel)]="test.digital2"
+          name="digital2"
+        />
+      </div>
+      <div class="form-group">
+        <label for="digital3">Input Third digital</label>
+        <input
+          type="text"
+          class="form-control"
+          id="digital3"
+          required
+          [(ngModel)]="test.digital3"
+          name="digital3"
+        />
+      </div>
+
+      <button (click)="guessNum()" class="btn btn-success">Submit</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Digitals are submitted successfully!</h4>
+    </div>
+
+    <div *ngIf="test.ans">
+      <label><strong>Ans</strong></label> {{ test.ans }}
+      <label><strong>三次重來,已測 {{ test.retryCnt }} 次</strong></label>
+      <button (click)="reTry()" class="btn btn-success">ReTry</button>
+    </div>
+
+  </div>
+</div>
