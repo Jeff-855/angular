@@ -16,16 +16,12 @@ export class TestComponent implements OnInit {
     digital3: '',
     ans:''
   };
-  constructor(private testService: TestService) {console.log("testcomponent1"); }
+  constructor(private testService: TestService) { }
   submitted = false;
   ngOnInit(): void {
-    console.log("testcomponent11");
-
-  }
+   }
 
   guessNum(): void {
-    console.log("guessNum");
-
     const data = {
       retryCnt: this.test.retryCnt,
       digital1: this.test.digital1,
@@ -34,9 +30,11 @@ export class TestComponent implements OnInit {
     };
     //var retryCnt1: any =localStorage.getItem('retryCnt1');
     var retryCnt: any =sessionStorage.getItem('retryCnt');
+    var ans1: any =sessionStorage.getItem('ans1');
     console.log("b4retryCnt"+retryCnt);
-    if (Number(retryCnt)>=3){
+    if (Number(retryCnt)>=10 || parseInt(ans1)==30 ) {
         retryCnt = null;
+        ans1 = null;
         console.log("afretryCnt"+retryCnt);
     }
 
@@ -55,12 +53,14 @@ export class TestComponent implements OnInit {
 
     this.testService.guessNum(data)
     .subscribe({
-      next: (res) => {
+      next: (res1) => {
 
-        console.log(res);
-        this.test.ans = Math.floor(res/10)+"A"+res%10 +"B";
+        console.log(res1);
+        this.test.ans = Math.floor(res1/10)+"A"+res1%10 +"B";
         this.submitted = true;
         console.log("test2:"+ this.test.ans);
+        sessionStorage.setItem('ans1', String(res1));
+        console.log("test2 ans1:"+ ans1);
 
       },
 
