@@ -11,6 +11,7 @@ import { TutorialsListComponent } from './components/tutorials-list/tutorials-li
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TestComponent } from './components/test/test.component';
+import { LoginTestComponent } from './components/login-test/login-test.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TestComponent } from './components/test/test.component';
     AddTutorialComponent,
     TutorialDetailsComponent,
     TutorialsListComponent,
-    TestComponent
+    TestComponent,
+    LoginTestComponent
   ],
   imports: [
     BrowserModule,

@@ -39,6 +39,7 @@
       <button (click)="guessNum()" class="btn btn-success">Submit</button>
     </div>
 
+
     <div *ngIf="submitted">
       <h4>Digitals are submitted successfully!</h4>
     </div>
@@ -48,6 +49,8 @@
       <label><strong>10次重來,已測 {{ test.retryCnt }} 次</strong></label>
       <button (click)="reTry()" class="btn btn-success">ReTry</button>
     </div>
+
+    <br><br/>
 
   </div>
 </div>
