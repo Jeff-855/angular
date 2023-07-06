@@ -1,0 +1,40 @@
+
+
+<div>
+
+  <div class="submit-form" >
+    <p><font size="6">login-test works!</font></p>
+    <div *ngIf="!submitted">
+      <div class="form-group" >
+        <label for="text">Input username</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          required
+          [(ngModel)]="username"
+         />
+      </div>
+      <div class="form-group" >
+        <label for="password">Input password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          required
+          [(ngModel)]="password"
+         />
+      </div>
+      <button (click)="clicked()" class="btn btn-success">Submit</button>
+    </div>
+
+
+    <iframe style="width:260px; height:115px;" src="https://www.youtube.com/embed/XN031PuViqI?list=PL2SrkGHjnWcyWbA4MGSeTQVNiFHt1YbjC" frameborder="0" allowfullscreen></iframe>
+    <br><br/>
+    <iframe width="260" height="115" src="https://www.youtube.com/embed/ho1mnuoS_WI" title="Shine YouTube video player" frameborder="0"  allowfullscreen></iframe>
+
+    <br>{{message}}<br/>
+    <br>{{testUser.password}}<br/>
+
+  </div>
+</div>
